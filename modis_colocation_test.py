@@ -65,6 +65,7 @@ plt.imshow(toa_swup[::-1,::-1], 'gray')
 plt.imshow(aod_grid[::-1,::-1])
 plt.show()
 
+"""
 # Load iMerg dataset
 im_path = r'/group_workspaces/cems2/nceo_generic/satellite_data/precipitation/iMERG/download/'
 im_name = r'3B-HHR-E.MS.MRG.3IMERG.20150301-S100000-E102959.0600.V04A.HDF5.nc'
@@ -81,3 +82,4 @@ p_lon = p_lon.repeat(1800,1)
 
 # Regrid. Note this takes substationally longer due to the larger dataset
 p_grid = sp.interpolate.griddata((p_lon.flatten(),p_lat.flatten()), p_dat.flatten(), (lon.data, lat.data), method='linear')
+"""
