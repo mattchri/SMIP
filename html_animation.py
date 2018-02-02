@@ -1,3 +1,7 @@
+#------------------------------------------------------------------------------
+# MODULE: html_animation.py
+# contains: html_script.py and html_template.py
+#
 # Description: Script used to generate an animated html and gif from a set of
 #images. The code creates an html script in the directory where the png files
 #are located. The html code is constructed from an html_template as described 
@@ -5,12 +9,18 @@
 #pre-generated png files into the new html file.
 #
 # Required Inputs:
-#imagefiles: array of strings containing each png filename
-#variablename: name of variable at START of each filename
-#outPath: output path of script
+#imagefiles: list of strings containing the name of each png filename (do not include path)
+#variablename: name of the variable at the START of each filename
+#outPath: output path of script (this is the directory where the pngs live)
 #
 # OPTIONAL Input:
 #make_gif: animate images into a gif
+#
+# Subroutines:
+# html_template.py (included below)
+#
+# Example:
+# html_script(['Tb_xxxx.png', 'Tb_yyyy.png', 'Tb_zzzz.png'], 'Tb','/path/to/pngs/')
 #
 #02/01/18, MC: upload initial version of html_animation.py to the repo
 #------------------------------------------------------------------------------
@@ -29,10 +39,6 @@ def html_script( imagefiles, variablename, outPath, make_gif = None):
 
     #number of imagefiles to import to html file
     fct = len(imagefiles)
-
-    print('hi')
-    print(make_gif)
-    print('hi')
 
     #format new lines to add to HTML file script
     newLines = []
